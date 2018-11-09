@@ -1,0 +1,69 @@
+<script type="text/javascript">
+<!--
+var hamburgersRate = 4;
+var hotdogsRate = 2;
+var corndogsRate = 3;
+var nachosRate = 5;
+var grilledGoodsCount = 0;
+var hamburgersAccum = 0;
+var hotdogsAccum = 0;
+var corndogsAccum = 0;
+var nachosAccum = 0;
+var moreGrilledGoods = "yes";
+var errorFlag, grilledGoodsType, numberGrilledGoods, moreGrilledGoods;
+//loop
+while (moreGrilledGoods == "yes")
+{
+	 errorFlag = 0;
+	 grilledGoodsType = prompt("hamburgers, hotdogs, corndogs, or nachos?", "");
+	 numberGrilledGoods = prompt("How many " + grilledGoodsType + " would you like?", "");
+	 numberGrilledGoods = parseInt(numberGrilledGoods);
+	 switch (grilledGoodsType)
+	 {
+	 	  case "hamburgers":
+			hamburgersAccum = hamburgersAccum + numberGrilledGoods;
+			alert(hamburgersAccum);
+			break;
+			
+			case "hotdogs":
+			hotdogsAccum = hotdogsAccum + numberGrilledGoods;
+			alert(hotdogsAccum);
+			break;
+			
+			case "corndogs":
+			corndogsAccum = corndogsAccum + numberGrilledGoods;
+			alert(corndogsAccum);
+			break;
+			
+			case "nachos":
+			nachosAccum = nachosAccum + numberGrilledGoods;
+			alert(nachosAccum);
+			break;
+			
+			default:
+			alert("You typed " + grilledGoodsType + " you should have type hamburgers, hotdogs, corndogs, or nachos");
+			errorFlag = 1;
+			break;
+	}
+	  if (errorFlag == 0)
+		{
+		moreGrilledGoods = prompt("Are there more grilled goods?", "");
+		}
+		else
+		{
+		    moreGrilledGoods = "yes";
+		}
+}//end loop
+hamburgers = hamburgersRate * hamburgersAccum;
+hotdogs = hotdogsRate * hotdogsAccum;
+corndogs = corndogsRate * corndogsAccum;
+nachos = nachosRate * nachosAccum;
+totalAmount = hamburgers + hotdogs + corndogs + nachos;
+//output
+document.write("Amount of money collected for hamburgers: $" + hamburgers);
+document.write("<br>Amount of money collected for hotdogs: $" + hotdogs);
+document.write("<br>Amount of money collected for corndogs: $" + corndogs);
+document.write("<br>Amount of money collected for nachos: $" + nachos);
+document.write("<br>Total Amount of money collected: $" + totalAmount);
+// -->
+</script>
